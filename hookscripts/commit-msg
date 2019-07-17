@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "Inside bash command line"
+if grep -P "[a-zA-Z0-9]{7,} (feat|chore|fix|refactor|style|test|docs)(:) [a-zA-Z0-9\s]{5,120}" "$1"; then
+        echo "Good commit message."
+        exit 0
+fi
+echo "Review your commit message."
+echo "Example: git commit -m 'US12345 Fix: Payment Portal'"
+exit 1
