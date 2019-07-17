@@ -1,6 +1,5 @@
 #!/bin/sh
-echo "Inside bash command line"
-if grep -P "[a-zA-Z0-9]{7,} (feat|chore|fix|refactor|style|test|docs)(:) [a-zA-Z0-9\s]{5,120}" "$1"; then
+if grep -E "[a-zA-Z0-9]{7,} (feat|chore|fix|refactor|style|test|docs)(:) [a-zA-Z0-9_ ]{5,120}" "$1"; then
         echo "Good commit message."
         exit 0
 fi
